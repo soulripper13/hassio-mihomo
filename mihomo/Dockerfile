@@ -24,7 +24,6 @@ RUN LATEST_TAG=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/
     mv /tmp/mihomo /app/mihomo && \
     chmod +x /app/mihomo && \
     rm -f /tmp/mihomo.gz
-
 # Copy startup script and default config
 COPY start-mihomo.sh /app/start-mihomo.sh
 COPY mihomo-default.yaml /app/mihomo-default.yaml
