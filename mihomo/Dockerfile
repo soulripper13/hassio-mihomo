@@ -19,7 +19,7 @@ RUN case "${BUILD_ARCH}" in \
 # Download, extract, and install the latest Mihomo binary
 RUN LATEST_TAG=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/') && \
     VERSION=${LATEST_TAG#v} && \
-    curl -L -o /tmp/mihomo.gz "https://github.com/MetaCubeX/mihomo/releases/download/`\({LATEST_TAG}/mihomo-linux-\)`{ARCH}-v${VERSION}.gz" && \
+    curl -L -o /tmp/mihomo.gz "https://github.com/MetaCubeX/mihomo/releases/download/${LATEST_TAG}/mihomo-linux-${ARCH}-v${VERSION}.gz" && \
     gunzip /tmp/mihomo.gz && \
     mv /tmp/mihomo /app/mihomo && \
     chmod +x /app/mihomo && \
